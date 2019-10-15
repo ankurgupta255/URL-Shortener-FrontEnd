@@ -43,12 +43,12 @@ class Homepage extends React.Component{
           <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
             <legend class="f4 fw6 ph0 mh0">Generate Your URL</legend>
             <div class="mt3">
-              <label class="db fw6 lh-copy f6" for="longlink">Original URL</label>
+              <label class="db fw6 lh-copy f6" for="longlink">Original URL *</label>
               <input class="pa2 input-reset ba bg-transparent w-100" type="url" name="longlink"  id="longlink" onChange={this.longlinkChange} />
             </div>
             <div class="mt3">
-              <label class="db fw6 lh-copy f6" for="customUrl">Custom URL</label>
-              <input class="pa2 input-reset ba bg-transparent w-100" type="text" name="customUrl"  id="customUrl" onChange={this.customUrlChange} />
+              <label class="db fw6 lh-copy f6" for="customUrl">Custom String</label>
+              <input class="pa2 input-reset ba bg-transparent w-100" type="text" name="customUrl"  id="customUrl" placeholder="Add a String of Characters to be used after BaseURL" onChange={this.customUrlChange} />
             </div> 
             <div class="" style={{'padding-top': '20px'}}>
             <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib center tc" type="submit" value="Generate URL" onClick={this.onButtonSubmit} />
