@@ -9,7 +9,7 @@ class Archive extends React.Component{
   }
 
   componentDidMount(){
-    fetch('http://localhost:3000',{
+    fetch('https://smallink.herokuapp.com',{
       method: 'get',
       headers: {'Content-Type': 'application/json'}
     }).then(response=>response.json())
@@ -26,10 +26,10 @@ class Archive extends React.Component{
         this.state.urls.map((url,i)=>{
           return(
             <article className="pl3">
-              <a class="link dt w-100 bb b--black-10 pb2 mt2 dim blue" href={this.state.urls[i].shortlink}>
+              <a class="link dt w-100 bb b--black-10 pb2 mt2 dim blue" href={"https://smallink.herokuapp.com/"+this.state.urls[i].shortlink}>
                 <div class="dtc v-top pl2">
                   <h1 class="f6 f5-ns fw6 lh-title black mv0">{this.state.urls[i].longlink}</h1>
-                  <h2 class="f6 fw4 mt2 mb0 black-60">http://localhost:3000/{this.state.urls[i].shortlink}</h2>
+                  <h2 class="f6 fw4 mt2 mb0 black-60">https://smallink.herokuapp.com/{this.state.urls[i].shortlink}</h2>
                 </div>
               </a>
             </article>

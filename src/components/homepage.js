@@ -19,7 +19,7 @@ class Homepage extends React.Component{
   }
 
   onButtonSubmit=()=>{
-    fetch('http://localhost:3000/url',{
+    fetch('https://smallink.herokuapp.com/url',{
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -30,6 +30,9 @@ class Homepage extends React.Component{
     .then(url=>{
       console.log(url)
       this.setState({shortlink: url.shortlink})
+    })
+    .catch(error=>{
+      console.log(error)
     })
   }
   render(){
@@ -52,7 +55,7 @@ class Homepage extends React.Component{
           </div>
           {this.state.shortlink ? <div class="mv3">
               <label class="db fw6 lh-copy f6" for="shortlink">Shortened URL</label>
-              <p class="b pa2 input-reset ba bg-transparent w-100" id="shortlink">http://localhost:3000/{this.state.shortlink}</p>
+              <p class="b pa2 input-reset ba bg-transparent w-100" id="shortlink">https://smallink.herokuapp.com/{this.state.shortlink}</p>
             </div> : <p class="b pa2 input-reset ba bg-transparent w-100" id="shortlink">URL Not Generated</p>}
           </fieldset>
       </main>
